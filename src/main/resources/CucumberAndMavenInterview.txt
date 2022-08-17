@@ -1,0 +1,177 @@
+Vladimir - Junit vs TestNG?
+Junit and TestNG are both testing tools where we can run methods as tests we can use
+@Test annotation.
+
+TestNG - is newer and has better annotations than Junit.
+with TestNG we can do parallel execution.
+
+we can use both of them for unit tests.
+
+on my current job we are using testNg for our testing. with our QA team we created our framework from scratch.
+from my previous job I have experience in building framework using Junit.
+
+10X Rule - Grant Cardone
+Sell or be Sold? - Grant Cardone
+
+Maven -> Java project and depedency management tool. it's also a project building building.
+
+Liudmyla - Which operating system do you have working on?
+Linux - my main OS at work. - RedHat 7.
+
+Have experience in MacOs and
+Windows - 08, 11.
+
+
+What purpose have you used Linux for?
+Commands linux - navigate the system. compile java files.
+create or delete folders.
+for troubleshooting mostly.
+how to check which apps are running - I use ps.
+How to check if a specific app is running or not? ps -ef | grep AppName.
+to stop an app - kill -9 PID
+
+
+Test Cases must be independent of each other.
+What are the most commond mistakes SDETs make which make test cases depedent from each other?
+1. Rely on a result from previous test.
+2. Tests don't clean up after themselves. - Have a @Before annotation which sets the app under test into a default state for
+each test.
+3. Tests are faster than the app under test. -  Let the app under test finish prossing commands sent from every test before
+test framework jumps to the next test. Waits.
+
+
+TestNG:
+Groups to group set of tests.
+How do you setup regression and smoke tests?
+1. Write tests in test file
+2. add each test to smoke and regression groups.
+3. in xml file I am separating them by groups. two separate xml files one for smoke, one for regression.
+4. Your biggest accomplished using TestNG. Inspired by Junit, more and better features. DataProvier, Parametization.
+TestNG is better than Junit.
+
+In my company with my team we implemented parallel testing that saved us time. 4 hours before
+now be brought the same number(1200) of tests to 2 hrs.
+
+
+Cucumber:
+is a tool that support behavior driven development. Test in cucumber written in plain English.
+in cucumber we have feature file which contaitns our tests one feature file per functionality there we write
+our test scenarios.
+
+problem? enables stakeholder to participate in the process.
+
+Step definition - java glue code which is mapped to corresponiding feature file step.
+
+Andrei - Interface vs Abstract classes?
+
+Interface is a the concept of OOP in Java. -> 1. Polymorphism - Dynamic.  Static.
+
+interface allows us achieve multiple inheritance. we can implement mutliple interfaces
+by a child class.
+
+Bank account Interface
+USBank
+UKBank
+MexicoBank
+
+static and final  variables.
+you can not instantiate interface directly.
+interface is useless without implementations.
+
+Car
+Bmw
+Mercedes
+Audi
+
+Car smallCar = new Bmw(); (top casting).
+
+Abstraction is a process of hiding irrelavant info from the user.
+In abstract class you have abtract methods too they dont have implementations.
+
+if you dont want to implement the method the class must be declared - abstract
+
+overloading() -> same name different params.
+
+
+Background in cucumber
+if there are precondtions steps that are repeating in each scenario within the feature file we can use background.
+Avoid code repetition. -> better maintainability.
+Allows you to add some context to scenarios ->
+
+Usually have more than 1 given.
+
+
+Scenario outline - running the same test against multiple test data.
+we use variables and example table
+each row represents one test case data.
+
+
+
+Assel -
+What is cucumber?
+BDD test tool. One the greatest tools for automation. Gives Exposure to non technical peers.
+
+Cucumber testing focuses on end users.  it can be integrated with Junit or TestNG for assertions and Runner classes.
+Tests are written in feature file populated with scenarios in gherkin language. which is
+Given
+When
+Then
+And -> avoid repeating Given, When, Then.
+
+Cucumber provides many features that
+Background - to avoid precondition repeations.
+Focus on the functionality under test.
+
+Scenario Outline: Making sure we are executing the same test scenario with multiple test data. Examples Table where each row
+in example table represent one scenario.
+
+Data Tables - is similar example table, but it's tied to only one step. Will be executed same amount of times.
+Belongs to only one step which is a list of Objects.
+3 ways of passing the data tables to step defs - Datatables, List<Map<String, String>> List<Object>
+
+How do you setup your test suites(Smoke or Regression)?
+@RunWith -> Junit Runner
+Cucumber.class
+
+Cucumber.Options() helps us setup test configs.
+we need to tell the runner which feature files to scan
+glue - tell the runner where to look for step defs.
+tags - filtering our tests. if you want to exclude some tests ~@tags.
+if you want to run ||, && "";
+
+
+Petro -
+
+Data Tables in Cucumber - list of info that our tests will be running through.
+Can be converted to list of maps.
+
+They belong to only one step. example table belongs to whole scenario.
+
+Cucumber best practices that you have established during your career -
+Using Hooks separately in one class.
+Before and after hooks.
+
+
+Jane - What is maven?
+Building Management tool -
+
+ in pom.xml dependencies - libraries
+
+ plugins - their are similar to dependencies. they dont require extra coding. it's performed automatically
+ in the project building and maven runs them automatically.
+
+ all maven phases are run using maven plugins. each phase has a default plugin with defauls configs.
+
+
+ are responsible for generating reports in json format.
+
+
+maven phases ->
+clean  -> cleans the target code
+validate -> prepare for the new compilation
+compile -> compiles the code and creates target folder
+test -> runs specified tests under test folder
+package -> creates jar file. jar or war.
+verify -> runs extra tests. and generates reports.
+install -> pushes the jar file to local repository. snapshot-version -> temporary version.
+deploy -> push from local repository to central company repository on the cloud.
